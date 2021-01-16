@@ -1,0 +1,11 @@
+
+
+POST  http://localhost:3000/auth/register HTTP/1.1
+content-type: application/json
+
+{
+ "fname":"Adedoyin",
+ "lname":"Awosanya",
+ "email":"didoloan@gmail.com",
+ "password":"didoloan"
+}

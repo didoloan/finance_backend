@@ -4,6 +4,7 @@ const app = require('./server');
 mongoose.connect(process.env.DB_URI, {
     useNewUrlParser:true, 
     useUnifiedTopology:true,
+    useCreateIndex: true,
     poolSize:50
 })
 .then(() => {
@@ -13,7 +14,7 @@ mongoose.connect(process.env.DB_URI, {
 
 mongoose.connection.on('connected', () => {
     console.log('Mongoose connected to db')
-    app.listen(process.env.port, (err) => {
+    app.listen(3000, (err) => {
         if(err) {
             console.error(`Couldn't start server with error ${err}`);
         }
