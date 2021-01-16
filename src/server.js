@@ -22,6 +22,10 @@ app.use(compression({
 
 app.use(morgan('dev'))
 
+app.get('/', (req, res) => {
+    res.send('First steps taken '+req.query.name);
+})
+
 app.use('/auth', authRoute);
 
 app.use('/bank', bankRoute);
